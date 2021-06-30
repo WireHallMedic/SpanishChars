@@ -2,8 +2,9 @@ package SpanishChars;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class SpanishChars extends JPanel
+public class SpanishChars extends JPanel implements ActionListener
 {
    private JButton[] button;
    public static final char A_LOWER = (char)225;
@@ -33,6 +34,26 @@ public class SpanishChars extends JPanel
       subpanel2.setLayout(new GridLayout(1, 7));
       char[] charArr = {A_UPPER, E_UPPER, I_UPPER, O_UPPER, U_UPPER, N_UPPER, EXCLAMATION,
                         A_LOWER, E_LOWER, I_LOWER, O_LOWER, U_LOWER, N_LOWER, QUESTION};
+      button = new JButton[14];
+      for(int i = 0; i < 7; i++)
+      {
+         button[i] = new JButton("" + charArr[i]);
+         button[i].addActionListener(this);
+         subpanel1.add(button[i]);
+      }
+      for(int i = 7; i < 14; i++)
+      {
+         button[i] = new JButton("" + charArr[i]);
+         button[i].addActionListener(this);
+         subpanel2.add(button[i]);
+      }
+      add(subpanel1);
+      add(subpanel2);
+   }
+   
+   public void actionPerformed(ActionEvent ae)
+   {
+   
    }
    
    public static void main(String[] args)
