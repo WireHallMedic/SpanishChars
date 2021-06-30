@@ -30,7 +30,11 @@ public class SpanishChars extends JPanel implements ActionListener, KeyListener
       super();
       setLayout(new GridLayout(4, 1));
       setVisible(true);
-      add(new JLabel("Click a button to copy that character to the clipboard", SwingConstants.CENTER));
+      JPanel subpanel0 = new JPanel();
+      subpanel0.setLayout(new GridLayout(2, 1));
+      add(subpanel0);
+      subpanel0.add(new JLabel("Click a button to copy that character to the clipboard.", SwingConstants.CENTER));
+      subpanel0.add(new JLabel("Alternatively, type a character to copy the related character.", SwingConstants.CENTER));
       JPanel subpanel1 = new JPanel();
       JPanel subpanel2 = new JPanel();
       subpanel1.setLayout(new GridLayout(1, 7));
