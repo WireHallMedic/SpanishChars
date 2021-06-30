@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.datatransfer.*;
 
-public class SpanishChars extends JPanel implements ActionListener
+public class SpanishChars extends JPanel implements ActionListener, KeyListener
 {
    private JButton[] button;
    public static final char A_LOWER = (char)225;
@@ -55,17 +55,30 @@ public class SpanishChars extends JPanel implements ActionListener
       add(new JLabel("Michael Widler, 2021  ", SwingConstants.RIGHT));
    }
    
+   private void copyToClipboard(char c)
+   {
+      StringSelection ss = new StringSelection("" + c);
+	   Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+   }
+   
    public void actionPerformed(ActionEvent ae)
    {
-      String outStr = "";
-      for(int i = 0; i < button.length; i++)
+      String outStr = "";      for(int i = 0; i < button.length; i++)
       {
          if(ae.getSource() == button[i])
          {
-            outStr = "" + charArr[i];
-      		StringSelection ss = new StringSelection(outStr);
-      	   Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+      		copyToClipboard(charArr[i]);
          }
+      }
+   }
+   
+   public void keyPressed(KeyEvent ke){}
+   public void keyReleased(KeyEvent ke){}
+   public void keyTyped(KeyEvent ke)
+   {
+      switch(ke.getKeyChar())
+      {
+         case 'a' : ; break;
       }
    }
    
