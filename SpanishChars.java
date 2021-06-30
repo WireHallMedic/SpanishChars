@@ -28,7 +28,7 @@ public class SpanishChars extends JPanel implements ActionListener
    public SpanishChars()
    {
       super();
-      setLayout(new GridLayout(3, 1));
+      setLayout(new GridLayout(4, 1));
       setVisible(true);
       add(new JLabel("Click a button to copy that character to the clipboard", SwingConstants.CENTER));
       JPanel subpanel1 = new JPanel();
@@ -52,6 +52,7 @@ public class SpanishChars extends JPanel implements ActionListener
       }
       add(subpanel1);
       add(subpanel2);
+      add(new JLabel("Michael Widler, 2021  ", SwingConstants.RIGHT));
    }
    
    public void actionPerformed(ActionEvent ae)
@@ -72,6 +73,7 @@ public class SpanishChars extends JPanel implements ActionListener
    {
       JFrame frame = new JFrame();
       SpanishChars panel = new SpanishChars();
+      frame.setTitle("SpanishChars");
       frame.setSize(400, 300);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.add(panel);
