@@ -53,6 +53,11 @@ public class SpanishChars extends JPanel implements ActionListener, KeyListener
       add(subpanel1);
       add(subpanel2);
       add(new JLabel("Michael Widler, 2021  ", SwingConstants.RIGHT));
+      
+      for(int i = 0; i < button.length; i++)
+         button[i].setFocusable(false);
+      addKeyListener(this);
+      this.grabFocus();
    }
    
    private void copyToClipboard(char c)
@@ -78,7 +83,20 @@ public class SpanishChars extends JPanel implements ActionListener, KeyListener
    {
       switch(ke.getKeyChar())
       {
-         case 'a' : ; break;
+         case 'a' : ; copyToClipboard(A_LOWER); break;
+         case 'e' : ; copyToClipboard(E_LOWER); break;
+         case 'i' : ; copyToClipboard(I_LOWER); break;
+         case 'o' : ; copyToClipboard(O_LOWER); break;
+         case 'u' : ; copyToClipboard(U_LOWER); break;
+         case 'n' : ; copyToClipboard(N_LOWER); break;
+         case 'A' : ; copyToClipboard(A_UPPER); break;
+         case 'E' : ; copyToClipboard(E_UPPER); break;
+         case 'I' : ; copyToClipboard(I_UPPER); break;
+         case 'O' : ; copyToClipboard(O_UPPER); break;
+         case 'U' : ; copyToClipboard(U_UPPER); break;
+         case 'N' : ; copyToClipboard(N_UPPER); break;
+         case '!' : ; copyToClipboard(EXCLAMATION); break;
+         case '?' : ; copyToClipboard(QUESTION); break;
       }
    }
    
@@ -91,5 +109,6 @@ public class SpanishChars extends JPanel implements ActionListener, KeyListener
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.add(panel);
       frame.setVisible(true);
+      frame.addKeyListener(panel);
    }
 }
