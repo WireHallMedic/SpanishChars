@@ -3,6 +3,7 @@ package SpanishChars;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.datatransfer.*;
 
 public class SpanishChars extends JPanel implements ActionListener
 {
@@ -55,7 +56,16 @@ public class SpanishChars extends JPanel implements ActionListener
    
    public void actionPerformed(ActionEvent ae)
    {
-   
+      String outStr = "";
+      for(int i = 0; i < button.length; i++)
+      {
+         if(ae.getSource() == button[i])
+         {
+            outStr = "" + charArr[i];
+      		StringSelection ss = new StringSelection(outStr);
+      	   Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+         }
+      }
    }
    
    public static void main(String[] args)
