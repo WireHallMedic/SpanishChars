@@ -13,7 +13,7 @@ public class SpanishChars extends JPanel implements ActionListener
    public static final char O_LOWER = (char)243;
    public static final char U_LOWER = (char)250;
    public static final char N_LOWER = (char)241;
-   public static final char A_UPPER = (char)192;
+   public static final char A_UPPER = (char)193;
    public static final char E_UPPER = (char)201;
    public static final char I_UPPER = (char)205;
    public static final char O_UPPER = (char)211;
@@ -27,7 +27,7 @@ public class SpanishChars extends JPanel implements ActionListener
       super();
       setLayout(new GridLayout(3, 1));
       setVisible(true);
-      add(new JLabel("Click a button to copy that character to the clipboard"));
+      add(new JLabel("Click a button to copy that character to the clipboard", SwingConstants.CENTER));
       JPanel subpanel1 = new JPanel();
       JPanel subpanel2 = new JPanel();
       subpanel1.setLayout(new GridLayout(1, 7));
@@ -39,12 +39,14 @@ public class SpanishChars extends JPanel implements ActionListener
       {
          button[i] = new JButton("" + charArr[i]);
          button[i].addActionListener(this);
+         button[i].setFont(new Font(button[i].getFont().getName(), Font.PLAIN, 18));
          subpanel1.add(button[i]);
       }
       for(int i = 7; i < 14; i++)
       {
          button[i] = new JButton("" + charArr[i]);
          button[i].addActionListener(this);
+         button[i].setFont(new Font(button[i].getFont().getName(), Font.PLAIN, 18));
          subpanel2.add(button[i]);
       }
       add(subpanel1);
