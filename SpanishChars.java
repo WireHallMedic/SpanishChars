@@ -22,6 +22,8 @@ public class SpanishChars extends JPanel implements ActionListener
    public static final char N_UPPER = (char)209;
    public static final char EXCLAMATION = (char)161;
    public static final char QUESTION = (char)191;
+   public static final char[] charArr = {A_UPPER, E_UPPER, I_UPPER, O_UPPER, U_UPPER, N_UPPER, EXCLAMATION,
+                                         A_LOWER, E_LOWER, I_LOWER, O_LOWER, U_LOWER, N_LOWER, QUESTION};
    
    public SpanishChars()
    {
@@ -33,8 +35,6 @@ public class SpanishChars extends JPanel implements ActionListener
       JPanel subpanel2 = new JPanel();
       subpanel1.setLayout(new GridLayout(1, 7));
       subpanel2.setLayout(new GridLayout(1, 7));
-      char[] charArr = {A_UPPER, E_UPPER, I_UPPER, O_UPPER, U_UPPER, N_UPPER, EXCLAMATION,
-                        A_LOWER, E_LOWER, I_LOWER, O_LOWER, U_LOWER, N_LOWER, QUESTION};
       button = new JButton[14];
       for(int i = 0; i < 7; i++)
       {
